@@ -20,14 +20,14 @@
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li [routerLinkActive]="['active']">
+            <li *ngIf="!authService.isLoggedIn()" [routerLinkActive]="['active']"> 
               <a [routerLink]="['/','login']">로그인</a>
             </li>
-            <li [routerLinkActive]="['active']">
+            <li *ngIf="!authService.isLoggedIn()" [routerLinkActive]="['active']">
               <a [routerLink]="['/','users','new']">등록</a>
             </li>
-            <li>
-              <a>로그아웃</a>
+            <li *ngIf="authService.isLoggedIn()">
+              <a (click)="authService.logout()">로그아웃</a>
             </li>
           </ul>
         </div>
