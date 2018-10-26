@@ -8,6 +8,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AuthGuard } from './auth.guard';
 import { UsersResolve } from './users.resolve';
 import { UserResolve } from './user.resolve';
+import { MenusResolve } from './menus.resolve';
+import { MenuResolve } from './menu.resolve';
 
 import { UtilService } from './util.service';
 import { AuthService } from './auth.service';
@@ -22,6 +24,9 @@ import { UserNewComponent } from './user-new/user-new.component';
 import { UserIndexComponent } from './user-index/user-index.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
 import { UserShowComponent } from './user-show/user-show.component';
+import { MenuIndexComponent } from './menu-index/menu-index.component';
+import { MenuNewComponent } from './menu-new/menu-new.component';
+import { MenuEditComponent } from './menu-edit/menu-edit.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +37,10 @@ import { UserShowComponent } from './user-show/user-show.component';
     UserNewComponent,
     UserIndexComponent,
     UserEditComponent,
-    UserShowComponent
+    UserShowComponent,
+    MenuIndexComponent,
+    MenuNewComponent,
+    MenuEditComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +61,9 @@ import { UserShowComponent } from './user-show/user-show.component';
     AuthService,
     UserService,
     UsersResolve,
-    UserResolve
+    UserResolve,
+    MenusResolve,
+    MenuResolve,
   ],
   bootstrap: [AppComponent]
 })

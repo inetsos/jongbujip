@@ -8,9 +8,8 @@ ul:after {
     clear: both;
 }
 ul li{
-    display: inline-block;
     list-style-type: none;
-    float:left;
+    float: left;
 }
 ul li a{
     display: inline-block;

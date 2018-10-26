@@ -18,6 +18,9 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li [routerLinkActive]="['active']">
+                <a [routerLink]="['/','menus']">메뉴관리</a>
+            </li>
+            <li [routerLinkActive]="['active']">
               <a [routerLink]="['/','users']">사용자</a>
             </li>
           </ul>
