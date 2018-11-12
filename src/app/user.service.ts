@@ -11,7 +11,7 @@ import { User } from './user';
 })
 export class UserService {
 
-  private apiBaseUrl = `${environment.apiBaseUrl}/users`;
+  private apiBaseUrl = `${environment.apiBaseUrl}/stores`;
 
   constructor(private http: HttpClient, private utilService: UtilService) { }
 

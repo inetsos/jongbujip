@@ -22,16 +22,21 @@ export class UserEditComponent implements OnInit {
 
   formErrors = {
     'currentPassword': '',
-    'userID': '',
+    'username': '',
+    'storeName': '',
     'phone': '',
     'email': '',
     'newPassword': '',
     'confirmPassword': '',
   };
   formErrorMessages = {
-    'userID': {
-      'required': '아이디를 입력하세요.',
+    'username': {
+      'required': '사용자이름을 입력하세요.',
       'pattern': '8~16자의 영문 숫자 조합입니다.',
+    },
+    'storeName': {
+      'required': '상호를 입력하세요.',
+      'pattern': '2~40자의 영문 숫자 조합입니다.',
     },
     'currentPassword': {
       'required': '현재 비밀번호를 입력하세요.',
@@ -55,7 +60,8 @@ export class UserEditComponent implements OnInit {
       currentPassword: ['', [Validators.required]],
       username: [this.user.username, [Validators.required, Validators.pattern(/^.{8,16}$/)]],
       name: [this.user.name],
-      phone: [this.user.phone, [Validators.required, Validators.pattern(/^\d{2,3}-\d{3,4}-\d{4}$/)]],
+      storeName: [this.user.storeName, [Validators.required, Validators.pattern(/^.{2,40}$/)]],
+      phone: [this.user.phone, [Validators.required, Validators.pattern(/^\d{3}-\d{3,4}-\d{4}$/)]],
       email: [this.user.email, [Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)]],
       newPassword: ['', [Validators.pattern(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,16}$/)]],
       confirmPassword: [''],

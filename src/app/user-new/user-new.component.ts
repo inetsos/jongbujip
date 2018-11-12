@@ -20,6 +20,7 @@ export class UserNewComponent implements OnInit {
   formErrors = {
     'username': '',
     'name': '',
+    'storeName': '',
     'phone': '',
     'email': '',
     'password': '',
@@ -29,6 +30,10 @@ export class UserNewComponent implements OnInit {
     'username': {
       'required': '사용자 이름을 입력하세요.',
       'pattern': '8~16자의 영문 숫자입니다.',
+    },
+    'storeName': {
+      'required': '상호 입력하세요.',
+      'pattern': '2~40자의 문자열입니다.',
     },
     'phone': {
       'required': '전화번호를 입력하세요.',
@@ -51,7 +56,8 @@ export class UserNewComponent implements OnInit {
     this.form = this.formBuilder.group({
       username: ['', [Validators.required, Validators.pattern(/^.{8,16}$/)]],
       name: [''],
-      phone: ['', [Validators.required, Validators.pattern(/^\d{2,3}-\d{3,4}-\d{4}$/)]],
+      storeName: ['', [Validators.required, Validators.pattern(/^.{2,40}$/)]],
+      phone: ['', [Validators.required, Validators.pattern(/^\d{3}-\d{3,4}-\d{4}$/)]],
       email: ['', [Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)]],
       password: ['', [Validators.required, Validators.pattern(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,16}$/)]],
       confirmPassword: ['', [Validators.required]],
